@@ -10,10 +10,11 @@ app.use(express.json());
 
 app.use("/api/v1", rootRouter);
 
+const PORT = process.env.PORT;
 connectDB()
   .then(() => {
-    app.listen(3000, () => {
-      console.log(`server running on port 3000`);
+    app.listen(PORT, () => {
+      console.log(`server running on port ${PORT}`);
     });
   })
   .catch((error) => {
